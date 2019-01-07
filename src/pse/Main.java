@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class Main {
 
-    static class Point implements Locationable {
+    static class Item implements Dimensional {
 
         private Double[] mCoords;
 
-        Point(Double x, Double y) {
+        Item(Double x, Double y) {
             mCoords = new Double[] {x, y};
         }
 
@@ -22,25 +22,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<Point> points = new ArrayList<>();
-        points.add(new Point(2.0, 3.0));
-        points.add(new Point(5.0, 4.0));
-        points.add(new Point(9.0, 6.0));
-        points.add(new Point(4.0, 7.0));
-        points.add(new Point(8.0, 1.0));
-        points.add(new Point(7.0, 2.0));
-        points.add(new Point(6.0, 3.0));
-        points.add(new Point(1.0, 8.0));
-        points.add(new Point(3.0, 9.0));
-        points.add(new Point(5.0, 8.0));
-        points.add(new Point(4.0, 1.0));
-        points.add(new Point(8.0, 9.0));
+        List<Item> items = new ArrayList<>();
+        items.add(new Item(2.0, 3.0));
+        items.add(new Item(5.0, 4.0));
+        items.add(new Item(9.0, 6.0));
+        items.add(new Item(4.0, 7.0));
+        items.add(new Item(8.0, 1.0));
+        items.add(new Item(7.0, 2.0));
+        items.add(new Item(6.0, 3.0));
+        items.add(new Item(1.0, 8.0));
+        items.add(new Item(3.0, 9.0));
+        items.add(new Item(5.0, 8.0));
+        items.add(new Item(4.0, 1.0));
+        items.add(new Item(8.0, 9.0));
 
         KdTree tree1 = new KdTree();
-        tree1.buildRecursive(points);
+        tree1.buildRecursive(items);
 
         KdTree tree2 = new KdTree();
-        tree2.buildIterative(points);
+        tree2.buildIterative(items);
 
         // Node nearest = tree.nearestNeighbour(new Double[] { 27.0, 5.0 });
     }

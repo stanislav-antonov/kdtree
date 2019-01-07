@@ -1,5 +1,5 @@
 package pse;
 
-public interface Locationable {
+public interface Dimensional {
     Double[] getCoords();
 }

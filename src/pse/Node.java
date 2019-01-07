@@ -1,6 +1,6 @@
 package pse;
 
-public class Node<T extends Locationable> implements Locationable {
+public class Node<T extends Dimensional> implements Dimensional {
 
     private Node mParentNode;
     private Node mLeftNode;
