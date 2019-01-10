@@ -43,8 +43,15 @@ public class KdTree {
             throw new IllegalStateException();
         }
 
-        NearestNeighbour nearestNeighbour = new NearestNeighbour();
-        return nearestNeighbour.search(mRootNode, point);
+        return NearestNeighbour.nearest(mRootNode, point);
+    }
+
+    public List<Node> kNearestNeighbour(Double[] point, int k) {
+        if (mRootNode == null) {
+            throw new IllegalStateException();
+        }
+
+        return NearestNeighbour.kNearest(mRootNode, point, k);
     }
 
     public Node buildIterative(List<? extends Dimensional> items) {

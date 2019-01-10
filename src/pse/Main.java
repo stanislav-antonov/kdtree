@@ -30,18 +30,11 @@ public class Main {
         items.add(new Item(8.0, 1.0));
         items.add(new Item(7.0, 2.0));
         items.add(new Item(6.0, 3.0));
-        items.add(new Item(1.0, 8.0));
-        items.add(new Item(3.0, 9.0));
-        items.add(new Item(5.0, 8.0));
-        items.add(new Item(4.0, 1.0));
-        items.add(new Item(8.0, 9.0));
-
-        KdTree tree1 = new KdTree();
-        tree1.buildRecursive(items);
 
         KdTree tree2 = new KdTree();
         tree2.buildIterative(items);
 
-        // Node nearest = tree.nearestNeighbour(new Double[] { 27.0, 5.0 });
+        Node nearest = tree2.nearestNeighbour(new Double[] { 7.0, 5.0 });
+        List<Node> knearest = tree2.kNearestNeighbour(new Double[] { 7.0, 5.0 }, 3);
     }
 }
