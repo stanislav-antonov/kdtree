@@ -1,5 +1,7 @@
 package pse;
 
+import java.util.Arrays;
+
 public class Node<T extends Dimensional> implements Dimensional {
 
     private Node mParentNode;
@@ -9,6 +11,10 @@ public class Node<T extends Dimensional> implements Dimensional {
     private final int mDepth;
 
     private final T mData;
+
+    public Node(T data) {
+        this(null, null, null, data, 0);
+    }
 
     public Node(Node parentNode, Node leftNode, Node rightNode, T data, int depth) {
         mParentNode = parentNode;
@@ -53,5 +59,17 @@ public class Node<T extends Dimensional> implements Dimensional {
 
     public void setRightNode(Node node) {
         mRightNode = node;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Node) {
+            Double[] c1 = ((Node) o).getCoords();
+            Double[] c2 = this.getCoords();
+
+            return Arrays.equals(c1, c2);
+        }
+
+        return false;
     }
 }
