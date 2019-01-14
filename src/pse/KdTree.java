@@ -126,6 +126,10 @@ public class KdTree {
         return mRootNode;
     }
 
+    public void delete() {
+        mRootNode = null;
+    }
+
     private Node<? extends Dimensional> buildRecursive(List<? extends Dimensional> items, int depth) {
         if (items.isEmpty()) {
             return null;

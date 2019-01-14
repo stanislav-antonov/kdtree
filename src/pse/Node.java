@@ -61,6 +61,10 @@ public class Node<T extends Dimensional> implements Dimensional {
         mRightNode = node;
     }
 
+    public T getData() {
+        return mData;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o instanceof Node) {
